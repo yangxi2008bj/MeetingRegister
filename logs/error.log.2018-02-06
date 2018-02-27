@@ -1,0 +1,12 @@
+[ERROR] 2018-02-06 16:37:50,412 com.lachesis.windranger.springmvc.util.DefaultExceptionHandler.resolveException(DefaultExceptionHandler.java:49)
+	页面输出消息：{"code":500,"message":"Failed to convert value of type 'java.lang.String' to required type 'long'; nested exception is java.lang.NumberFormatException: For input string: "undefined""}
+[ERROR] 2018-02-06 16:38:59,168 com.lachesis.windranger.springmvc.util.DefaultExceptionHandler.resolveException(DefaultExceptionHandler.java:49)
+	页面输出消息：{"code":500,"message":"Failed to convert value of type 'java.lang.String' to required type 'long'; nested exception is java.lang.NumberFormatException: For input string: "undefined""}
+[ERROR] 2018-02-06 17:47:12,850 com.lachesis.windranger.springmvc.util.DefaultExceptionHandler.resolveException(DefaultExceptionHandler.java:49)
+	页面输出消息：{"code":500,"message":"
+### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'hotel' at row 1
+### The error may involve com.lachesis.windranger.authentication.dao.RegisterInfoMapper.updateByPrimaryKeySelective-Inline
+### The error occurred while setting parameters
+### SQL: update register_info set      register_id = ?,                       register_meeting = ?,                       name = ?,                       age = ?,                       province = ?,                       city = ?,                       duty = ?,                       title = ?,                       organization = ?,                       department = ?,                       mobile = ?,                       phone = ?,                       email = ?,                       fee_origin = ?,                       hotel = ?,                       lunch = ?,                       agree = ?       where seq_id = ?
+### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'hotel' at row 1
+; SQL []; Data truncation: Data too long for column 'hotel' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'hotel' at row 1"}

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lachesis.windranger.authentication.dao.RegisterInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    <id column="seq_id" property="seqId" jdbcType="BIGINT" />
+    <result column="register_id" property="registerId" jdbcType="BIGINT" />
+    <result column="register_meeting" property="registerMeeting" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="organization" property="organization" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="fee_origin" property="feeOrigin" jdbcType="VARCHAR" />
+    <result column="hotel" property="hotel" jdbcType="VARCHAR" />
+    <result column="lunch" property="lunch" jdbcType="VARCHAR" />
+    <result column="agree" property="agree" jdbcType="VARCHAR" />
+    <result column="invoice_title" property="invoiceTitle" jdbcType="VARCHAR" />
+    <result column="tax_no" property="taxNo" jdbcType="VARCHAR" />
+    <result column="hospital_level" property="hospitalLevel" jdbcType="VARCHAR" />
+    <result column="hospital_type" property="hospitalType" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from register_info
+    where seq_id = #{seqId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    insert into register_info (seq_id, register_id, register_meeting, 
+      name, age, province, 
+      city, duty, title, 
+      organization, department, mobile, 
+      phone, email, fee_origin, 
+      hotel, lunch, agree, 
+      invoice_title, tax_no, hospital_level, 
+      hospital_type)
+    values (#{seqId,jdbcType=BIGINT}, #{registerId,jdbcType=BIGINT}, #{registerMeeting,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{organization,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{feeOrigin,jdbcType=VARCHAR}, 
+      #{hotel,jdbcType=VARCHAR}, #{lunch,jdbcType=VARCHAR}, #{agree,jdbcType=VARCHAR}, 
+      #{invoiceTitle,jdbcType=VARCHAR}, #{taxNo,jdbcType=VARCHAR}, #{hospitalLevel,jdbcType=VARCHAR}, 
+      #{hospitalType,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    update register_info
+    set register_id = #{registerId,jdbcType=BIGINT},
+      register_meeting = #{registerMeeting,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      duty = #{duty,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      organization = #{organization,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      fee_origin = #{feeOrigin,jdbcType=VARCHAR},
+      hotel = #{hotel,jdbcType=VARCHAR},
+      lunch = #{lunch,jdbcType=VARCHAR},
+      agree = #{agree,jdbcType=VARCHAR},
+      invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      tax_no = #{taxNo,jdbcType=VARCHAR},
+      hospital_level = #{hospitalLevel,jdbcType=VARCHAR},
+      hospital_type = #{hospitalType,jdbcType=VARCHAR}
+    where seq_id = #{seqId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select seq_id, register_id, register_meeting, name, age, province, city, duty, title, 
+    organization, department, mobile, phone, email, fee_origin, hotel, lunch, agree, 
+    invoice_title, tax_no, hospital_level, hospital_type
+    from register_info
+    where seq_id = #{seqId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select seq_id, register_id, register_meeting, name, age, province, city, duty, title, 
+    organization, department, mobile, phone, email, fee_origin, hotel, lunch, agree, 
+    invoice_title, tax_no, hospital_level, hospital_type
+    from register_info
+  </select>
+  <delete id="removeKeysWithSession" parameterType="java.util.List" >
+    delete from register_info where seq_id IN <foreach close=")" collection="list" index="index" item="item" open="(" separator=","> #{item} </foreach>
+  </delete>
+  <delete id="deleteByBean" parameterType="java.lang.Long" >
+    delete from register_info where 1=1 
+    <if test="seqId!=null" >
+      and seq_id = #{seqId,jdbcType=BIGINT}
+    </if>
+    <if test="registerId!=null" >
+      and register_id = #{registerId,jdbcType=BIGINT}
+    </if>
+    <if test="registerMeeting!=null" >
+      and register_meeting = #{registerMeeting,jdbcType=VARCHAR}
+    </if>
+    <if test="name!=null" >
+      and name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="age!=null" >
+      and age = #{age,jdbcType=VARCHAR}
+    </if>
+    <if test="province!=null" >
+      and province = #{province,jdbcType=VARCHAR}
+    </if>
+    <if test="city!=null" >
+      and city = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="duty!=null" >
+      and duty = #{duty,jdbcType=VARCHAR}
+    </if>
+    <if test="title!=null" >
+      and title = #{title,jdbcType=VARCHAR}
+    </if>
+    <if test="organization!=null" >
+      and organization = #{organization,jdbcType=VARCHAR}
+    </if>
+    <if test="department!=null" >
+      and department = #{department,jdbcType=VARCHAR}
+    </if>
+    <if test="mobile!=null" >
+      and mobile = #{mobile,jdbcType=VARCHAR}
+    </if>
+    <if test="phone!=null" >
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="email!=null" >
+      and email = #{email,jdbcType=VARCHAR}
+    </if>
+    <if test="feeOrigin!=null" >
+      and fee_origin = #{feeOrigin,jdbcType=VARCHAR}
+    </if>
+    <if test="hotel!=null" >
+      and hotel = #{hotel,jdbcType=VARCHAR}
+    </if>
+    <if test="lunch!=null" >
+      and lunch = #{lunch,jdbcType=VARCHAR}
+    </if>
+    <if test="agree!=null" >
+      and agree = #{agree,jdbcType=VARCHAR}
+    </if>
+    <if test="invoiceTitle!=null" >
+      and invoice_title = #{invoiceTitle,jdbcType=VARCHAR}
+    </if>
+    <if test="taxNo!=null" >
+      and tax_no = #{taxNo,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalLevel!=null" >
+      and hospital_level = #{hospitalLevel,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalType!=null" >
+      and hospital_type = #{hospitalType,jdbcType=VARCHAR}
+    </if>
+  </delete>
+  <insert parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" id="insertAndReturnKey" keyProperty="seqId" useGeneratedKeys="true" >
+    insert into register_info (seq_id, register_id, register_meeting, 
+      name, age, province, 
+      city, duty, title, 
+      organization, department, mobile, 
+      phone, email, fee_origin, 
+      hotel, lunch, agree, 
+      invoice_title, tax_no, hospital_level, 
+      hospital_type)
+    values (#{seqId,jdbcType=BIGINT}, #{registerId,jdbcType=BIGINT}, #{registerMeeting,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{organization,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{feeOrigin,jdbcType=VARCHAR}, 
+      #{hotel,jdbcType=VARCHAR}, #{lunch,jdbcType=VARCHAR}, #{agree,jdbcType=VARCHAR}, 
+      #{invoiceTitle,jdbcType=VARCHAR}, #{taxNo,jdbcType=VARCHAR}, #{hospitalLevel,jdbcType=VARCHAR}, 
+      #{hospitalType,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    update register_info set
+    <trim suffixOverrides="," >
+      <if test="registerId != null" >
+        register_id = #{registerId,jdbcType=BIGINT},
+      </if>
+      <if test="registerMeeting != null" >
+        register_meeting = #{registerMeeting,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="organization != null" >
+        organization = #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="feeOrigin != null" >
+        fee_origin = #{feeOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="hotel != null" >
+        hotel = #{hotel,jdbcType=VARCHAR},
+      </if>
+      <if test="lunch != null" >
+        lunch = #{lunch,jdbcType=VARCHAR},
+      </if>
+      <if test="agree != null" >
+        agree = #{agree,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="taxNo != null" >
+        tax_no = #{taxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalLevel != null" >
+        hospital_level = #{hospitalLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalType != null" >
+        hospital_type = #{hospitalType,jdbcType=VARCHAR}
+      </if>
+    </trim>
+     where seq_id = #{seqId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByBean" resultMap="BaseResultMap" parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    select * from register_info where 1=1 
+    <if test="seqId!=null" >
+      and seq_id = #{seqId,jdbcType=BIGINT}
+    </if>
+    <if test="registerId!=null" >
+      and register_id = #{registerId,jdbcType=BIGINT}
+    </if>
+    <if test="registerMeeting!=null" >
+      and register_meeting = #{registerMeeting,jdbcType=VARCHAR}
+    </if>
+    <if test="name!=null" >
+      and name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="age!=null" >
+      and age = #{age,jdbcType=VARCHAR}
+    </if>
+    <if test="province!=null" >
+      and province = #{province,jdbcType=VARCHAR}
+    </if>
+    <if test="city!=null" >
+      and city = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="duty!=null" >
+      and duty = #{duty,jdbcType=VARCHAR}
+    </if>
+    <if test="title!=null" >
+      and title = #{title,jdbcType=VARCHAR}
+    </if>
+    <if test="organization!=null" >
+      and organization = #{organization,jdbcType=VARCHAR}
+    </if>
+    <if test="department!=null" >
+      and department = #{department,jdbcType=VARCHAR}
+    </if>
+    <if test="mobile!=null" >
+      and mobile = #{mobile,jdbcType=VARCHAR}
+    </if>
+    <if test="phone!=null" >
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="email!=null" >
+      and email = #{email,jdbcType=VARCHAR}
+    </if>
+    <if test="feeOrigin!=null" >
+      and fee_origin = #{feeOrigin,jdbcType=VARCHAR}
+    </if>
+    <if test="hotel!=null" >
+      and hotel = #{hotel,jdbcType=VARCHAR}
+    </if>
+    <if test="lunch!=null" >
+      and lunch = #{lunch,jdbcType=VARCHAR}
+    </if>
+    <if test="agree!=null" >
+      and agree = #{agree,jdbcType=VARCHAR}
+    </if>
+    <if test="invoiceTitle!=null" >
+      and invoice_title = #{invoiceTitle,jdbcType=VARCHAR}
+    </if>
+    <if test="taxNo!=null" >
+      and tax_no = #{taxNo,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalLevel!=null" >
+      and hospital_level = #{hospitalLevel,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalType!=null" >
+      and hospital_type = #{hospitalType,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <select id="countByBean" resultType="int" parameterType="com.lachesis.windranger.authentication.dbmodel.RegisterInfo" >
+    select count(0) from register_info where 1=1 
+    <if test="seqId!=null" >
+      and seq_id = #{seqId,jdbcType=BIGINT}
+    </if>
+    <if test="registerId!=null" >
+      and register_id = #{registerId,jdbcType=BIGINT}
+    </if>
+    <if test="registerMeeting!=null" >
+      and register_meeting = #{registerMeeting,jdbcType=VARCHAR}
+    </if>
+    <if test="name!=null" >
+      and name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="age!=null" >
+      and age = #{age,jdbcType=VARCHAR}
+    </if>
+    <if test="province!=null" >
+      and province = #{province,jdbcType=VARCHAR}
+    </if>
+    <if test="city!=null" >
+      and city = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="duty!=null" >
+      and duty = #{duty,jdbcType=VARCHAR}
+    </if>
+    <if test="title!=null" >
+      and title = #{title,jdbcType=VARCHAR}
+    </if>
+    <if test="organization!=null" >
+      and organization = #{organization,jdbcType=VARCHAR}
+    </if>
+    <if test="department!=null" >
+      and department = #{department,jdbcType=VARCHAR}
+    </if>
+    <if test="mobile!=null" >
+      and mobile = #{mobile,jdbcType=VARCHAR}
+    </if>
+    <if test="phone!=null" >
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="email!=null" >
+      and email = #{email,jdbcType=VARCHAR}
+    </if>
+    <if test="feeOrigin!=null" >
+      and fee_origin = #{feeOrigin,jdbcType=VARCHAR}
+    </if>
+    <if test="hotel!=null" >
+      and hotel = #{hotel,jdbcType=VARCHAR}
+    </if>
+    <if test="lunch!=null" >
+      and lunch = #{lunch,jdbcType=VARCHAR}
+    </if>
+    <if test="agree!=null" >
+      and agree = #{agree,jdbcType=VARCHAR}
+    </if>
+    <if test="invoiceTitle!=null" >
+      and invoice_title = #{invoiceTitle,jdbcType=VARCHAR}
+    </if>
+    <if test="taxNo!=null" >
+      and tax_no = #{taxNo,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalLevel!=null" >
+      and hospital_level = #{hospitalLevel,jdbcType=VARCHAR}
+    </if>
+    <if test="hospitalType!=null" >
+      and hospital_type = #{hospitalType,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

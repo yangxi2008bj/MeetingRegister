@@ -1,0 +1,454 @@
+[INFO] 2018-02-07 11:04:09,499 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)
+	 Root WebApplicationContext: initialization started
+[INFO] 2018-02-07 11:04:09,561 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing Root WebApplicationContext: startup date [Wed Feb 07 11:04:09 CST 2018]; root of context hierarchy
+[INFO] 2018-02-07 11:04:09,607 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] 2018-02-07 11:04:10,177 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+	 Loading properties file from class path resource [config.properties]
+[INFO] 2018-02-07 11:04:10,185 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 11:04:10,620 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715)
+	 {dataSource-1} inited
+[INFO] 2018-02-07 11:04:11,378 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)
+	 Root WebApplicationContext: initialization completed in 1873 ms
+[INFO] 2018-02-07 11:04:11,427 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+	 FrameworkServlet 'SpringMVC': initialization started
+[INFO] 2018-02-07 11:04:11,429 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:04:11 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:04:11,429 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [springmvc-servlet.xml]
+[INFO] 2018-02-07 11:04:11,788 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:826)
+	 Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]]
+[INFO] 2018-02-07 11:04:11,789 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 11:04:11,789 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=handlerExceptionResolver,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'handlerExceptionResolver' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 11:04:11,908 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 11:04:12,271 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 11:04:12,273 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 11:04:12,275 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 11:04:12,275 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 11:04:12,281 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 11:04:12,288 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 11:04:12,289 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 11:04:12,289 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 11:04:12,954 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:04:11 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:04:13,045 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:04:11 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:04:13,704 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 11:04:13,705 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 11:04:13,706 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 11:04:13,707 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 11:04:13,708 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 11:04:13,712 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 11:04:13,713 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 11:04:13,713 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 11:04:13,953 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:04:11 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:04:14,049 org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:341)
+	 Starting beans in phase 2147483647
+[INFO] 2018-02-07 11:04:14,050 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:120)
+	 Context refreshed
+[INFO] 2018-02-07 11:04:14,091 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:123)
+	 Found 1 custom documentation plugin(s)
+[INFO] 2018-02-07 11:04:14,121 springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)
+	 Scanning for api listing references
+[INFO] 2018-02-07 11:04:14,257 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: accountLoginUsingGET_1
+[INFO] 2018-02-07 11:04:14,274 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: sendVerificationUsingGET_1
+[INFO] 2018-02-07 11:04:14,374 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingGET_1
+[INFO] 2018-02-07 11:04:14,400 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingPOST_1
+[INFO] 2018-02-07 11:04:14,453 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+	 FrameworkServlet 'SpringMVC': initialization completed in 3026 ms
+[INFO] 2018-02-07 11:09:26,073 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:09:26-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 11:09:26,270 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:196ms
+[INFO] 2018-02-07 11:17:52,045 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:17:52-------------------------------------
+Controller-Method: springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation
+Params    : 
+URI       : /windranger/v2/api-docs
+
+[INFO] 2018-02-07 11:17:52,158 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/v2/api-docs]execTime:112ms
+[INFO] 2018-02-07 11:18:45,708 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:18:45-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 11:18:45,716 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:8ms
+[INFO] 2018-02-07 11:20:16,571 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:20:16-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 11:20:16,583 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:11ms
+[INFO] 2018-02-07 11:20:53,054 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:20:53-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.authentication.LoginController.accountLogin
+Params    : mobile=17379739352	verification=856324	
+URI       : /windranger/login/mobile
+
+[INFO] 2018-02-07 11:20:53,062 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/login/mobile]execTime:8ms
+[INFO] 2018-02-07 11:20:53,120 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:20:53-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 11:20:53,125 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:5ms
+[INFO] 2018-02-07 11:21:21,893 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:21:21-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[INFO] 2018-02-07 11:23:23,106 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:23:23-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[INFO] 2018-02-07 11:23:48,922 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin]execTime:147029ms
+[INFO] 2018-02-07 11:23:53,631 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin]execTime:30525ms
+[INFO] 2018-02-07 11:24:18,459 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)
+	 Root WebApplicationContext: initialization started
+[INFO] 2018-02-07 11:24:18,497 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing Root WebApplicationContext: startup date [Wed Feb 07 11:24:18 CST 2018]; root of context hierarchy
+[INFO] 2018-02-07 11:24:18,519 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] 2018-02-07 11:24:18,815 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+	 Loading properties file from class path resource [config.properties]
+[INFO] 2018-02-07 11:24:18,818 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 11:24:19,063 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715)
+	 {dataSource-1} inited
+[INFO] 2018-02-07 11:24:19,577 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)
+	 Root WebApplicationContext: initialization completed in 1116 ms
+[INFO] 2018-02-07 11:24:19,601 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+	 FrameworkServlet 'SpringMVC': initialization started
+[INFO] 2018-02-07 11:24:19,603 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:24:19 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:24:19,603 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [springmvc-servlet.xml]
+[INFO] 2018-02-07 11:24:20,030 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:826)
+	 Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]]
+[INFO] 2018-02-07 11:24:20,031 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 11:24:20,031 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=handlerExceptionResolver,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'handlerExceptionResolver' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 11:24:20,110 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 11:24:20,268 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 11:24:20,271 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 11:24:20,272 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 11:24:20,272 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 11:24:20,276 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 11:24:20,283 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 11:24:20,283 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 11:24:20,284 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 11:24:20,657 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:24:19 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:24:20,710 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:24:19 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:24:21,018 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 11:24:21,018 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 11:24:21,019 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 11:24:21,020 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 11:24:21,020 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 11:24:21,024 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 11:24:21,024 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 11:24:21,025 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 11:24:21,155 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 11:24:19 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 11:24:21,199 org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:341)
+	 Starting beans in phase 2147483647
+[INFO] 2018-02-07 11:24:21,200 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:120)
+	 Context refreshed
+[INFO] 2018-02-07 11:24:21,216 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:123)
+	 Found 1 custom documentation plugin(s)
+[INFO] 2018-02-07 11:24:21,230 springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)
+	 Scanning for api listing references
+[INFO] 2018-02-07 11:24:21,343 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: accountLoginUsingGET_1
+[INFO] 2018-02-07 11:24:21,357 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: sendVerificationUsingGET_1
+[INFO] 2018-02-07 11:24:21,445 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingGET_1
+[INFO] 2018-02-07 11:24:21,462 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingPOST_1
+[INFO] 2018-02-07 11:24:21,505 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+	 FrameworkServlet 'SpringMVC': initialization completed in 1904 ms
+[INFO] 2018-02-07 11:26:03,998 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 11:26:03-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 11:26:04,149 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:149ms
+[INFO] 2018-02-07 12:24:59,019 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:24:59-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[ERROR] 2018-02-07 12:24:59,087 com.lachesis.windranger.springmvc.util.DefaultExceptionHandler.resolveException(DefaultExceptionHandler.java:49)
+	 页面输出消息：{"code":500,"message":"Could not read document: Can not deserialize instance of java.lang.String out of START_ARRAY token
+ at [Source: java.io.PushbackInputStream@6c002312; line: 1, column: 77] (through reference chain: com.lachesis.windranger.authentication.dbmodel.RegisterInfo["city"]); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Can not deserialize instance of java.lang.String out of START_ARRAY token
+ at [Source: java.io.PushbackInputStream@6c002312; line: 1, column: 77] (through reference chain: com.lachesis.windranger.authentication.dbmodel.RegisterInfo["city"])"}
+[INFO] 2018-02-07 12:26:35,227 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:26:35-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[INFO] 2018-02-07 12:26:35,362 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin]execTime:134ms
+[INFO] 2018-02-07 12:26:39,853 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:26:39-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[INFO] 2018-02-07 12:26:39,975 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin]execTime:122ms
+[INFO] 2018-02-07 12:26:41,611 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:26:41-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 12:26:41,619 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:7ms
+[INFO] 2018-02-07 12:27:03,857 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:27:03-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 12:27:03,863 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:5ms
+[INFO] 2018-02-07 12:29:49,616 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:29:49-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin
+
+[INFO] 2018-02-07 12:29:49,771 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin]execTime:154ms
+[INFO] 2018-02-07 12:29:56,499 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:29:56-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 12:29:56,506 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:6ms
+[INFO] 2018-02-07 12:34:31,632 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:34:31-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.authentication.LoginController.accountLogin
+Params    : mobile=17379739352	verification=856324	
+URI       : /windranger/login/mobile
+
+[INFO] 2018-02-07 12:34:31,661 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/login/mobile]execTime:28ms
+[INFO] 2018-02-07 12:34:31,797 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:34:31-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.authentication.LoginController.sendVerification
+Params    : mobile=17379739352	
+URI       : /windranger/login/verificationCode
+
+[INFO] 2018-02-07 12:34:32,562 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/login/verificationCode]execTime:765ms
+[INFO] 2018-02-07 12:35:11,908 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:35:11-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.authentication.LoginController.accountLogin
+Params    : mobile=17379739352	verification=337154	
+URI       : /windranger/login/mobile
+
+[INFO] 2018-02-07 12:35:11,929 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/login/mobile]execTime:21ms
+[INFO] 2018-02-07 12:35:13,729 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:35:13-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 12:35:13,738 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:9ms
+[INFO] 2018-02-07 12:36:59,476 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 12:36:59-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 12:36:59,482 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:6ms
+[INFO] 2018-02-07 13:03:51,309 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 13:03:51-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 13:03:51,315 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:6ms
+[INFO] 2018-02-07 13:31:54,977 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)
+	 Root WebApplicationContext: initialization started
+[INFO] 2018-02-07 13:31:55,020 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing Root WebApplicationContext: startup date [Wed Feb 07 13:31:55 CST 2018]; root of context hierarchy
+[INFO] 2018-02-07 13:31:55,047 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] 2018-02-07 13:31:55,346 org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+	 Loading properties file from class path resource [config.properties]
+[INFO] 2018-02-07 13:31:55,350 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 13:31:55,621 com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715)
+	 {dataSource-1} inited
+[INFO] 2018-02-07 13:31:56,151 org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)
+	 Root WebApplicationContext: initialization completed in 1172 ms
+[INFO] 2018-02-07 13:31:56,211 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+	 FrameworkServlet 'SpringMVC': initialization started
+[INFO] 2018-02-07 13:31:56,214 org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+	 Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 13:31:56 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 13:31:56,214 org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+	 Loading XML bean definitions from class path resource [springmvc-servlet.xml]
+[INFO] 2018-02-07 13:31:56,549 org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:826)
+	 Overriding bean definition for bean 'mvcContentNegotiationManager' with a different definition: replacing [Root bean: class [org.springframework.web.accept.ContentNegotiationManagerFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration; factoryMethodName=mvcContentNegotiationManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]]
+[INFO] 2018-02-07 13:31:56,550 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=mvcUriComponentsContributor,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'mvcUriComponentsContributor' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 13:31:56,551 org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.isOverriddenByExistingDefinition(ConfigurationClassBeanDefinitionReader.java:298)
+	 Skipping bean definition for [BeanMethod:name=handlerExceptionResolver,declaringClass=org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport]: a definition for bean 'handlerExceptionResolver' already exists. This top-level bean definition is considered as an override.
+[INFO] 2018-02-07 13:31:56,799 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+	 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2018-02-07 13:31:56,990 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 13:31:56,992 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 13:31:56,993 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 13:31:56,994 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 13:31:56,999 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 13:31:57,008 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 13:31:57,009 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 13:31:57,009 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 13:31:57,412 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 13:31:56 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 13:31:57,453 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 13:31:56 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 13:31:57,763 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/verificationCode],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public void com.lachesis.windranger.controller.authentication.LoginController.sendVerification(java.lang.String)
+[INFO] 2018-02-07 13:31:57,763 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/login/mobile],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.lachesis.windranger.controller.authentication.LoginController.accountLogin(java.lang.String,java.lang.String)
+[INFO] 2018-02-07 13:31:57,764 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public boolean com.lachesis.windranger.controller.register.RegisterController.register(com.lachesis.windranger.authentication.dbmodel.RegisterInfo)
+[INFO] 2018-02-07 13:31:57,765 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/register/signin/{registerId}],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public java.util.List<com.lachesis.windranger.authentication.dbmodel.RegisterInfo> com.lachesis.windranger.controller.register.RegisterController.register(long)
+[INFO] 2018-02-07 13:31:57,765 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+[INFO] 2018-02-07 13:31:57,768 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+[INFO] 2018-02-07 13:31:57,769 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+[INFO] 2018-02-07 13:31:57,770 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:543)
+	 Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+[INFO] 2018-02-07 13:31:57,881 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache(RequestMappingHandlerAdapter.java:534)
+	 Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Feb 07 13:31:56 CST 2018]; parent: Root WebApplicationContext
+[INFO] 2018-02-07 13:31:57,920 org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:341)
+	 Starting beans in phase 2147483647
+[INFO] 2018-02-07 13:31:57,920 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:120)
+	 Context refreshed
+[INFO] 2018-02-07 13:31:57,939 springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:123)
+	 Found 1 custom documentation plugin(s)
+[INFO] 2018-02-07 13:31:57,955 springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)
+	 Scanning for api listing references
+[INFO] 2018-02-07 13:31:58,034 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: accountLoginUsingGET_1
+[INFO] 2018-02-07 13:31:58,046 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: sendVerificationUsingGET_1
+[INFO] 2018-02-07 13:31:58,108 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingGET_1
+[INFO] 2018-02-07 13:31:58,121 springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)
+	 Generating unique operation named: registerUsingPOST_1
+[INFO] 2018-02-07 13:31:58,152 org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
+	 FrameworkServlet 'SpringMVC': initialization completed in 1941 ms
+[INFO] 2018-02-07 13:38:27,338 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 13:38:27-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 13:38:27,505 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:165ms
+[INFO] 2018-02-07 13:47:42,715 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 13:47:42-------------------------------------
+Controller-Method: springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation
+Params    : 
+URI       : /windranger/v2/api-docs
+
+[INFO] 2018-02-07 13:47:42,807 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/v2/api-docs]execTime:91ms
+[INFO] 2018-02-07 13:57:28,114 com.lachesis.windranger.interceptor.CommonInteceptor.preHandle(CommonInteceptor.java:37)
+	 preHandle-----------------------2018-02-07 13:57:28-------------------------------------
+Controller-Method: com.lachesis.windranger.controller.register.RegisterController.register
+Params    : 
+URI       : /windranger/register/signin/3
+
+[INFO] 2018-02-07 13:57:28,128 com.lachesis.windranger.interceptor.CommonInteceptor.postHandle(CommonInteceptor.java:54)
+	 [/windranger/register/signin/3]execTime:14ms
