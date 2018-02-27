@@ -68,6 +68,7 @@ public class RegisterService implements IRegisterService {
 			if ((season.equals("1") && limit.size() > 1000)
 							|| (season.equals("2") && limit.size() > 1200)
 							|| (season.equals("3") && limit.size() > 1200)
+							|| (season.equals("3B") && limit.size() > 500)
 							|| (season.equals("4A") && limit.size() > 1200)
 							|| (season.equals("4B") && limit.size() > 600)) {
 				return false;
@@ -75,7 +76,11 @@ public class RegisterService implements IRegisterService {
 			registerInfo.setSeqId(res.get(0).getSeqId());
 			registerInfoMapper.updateByPrimaryKeySelective(registerInfo);
 		} else {
-			return false;
+			if (season.equals("3B") && limit.size() <= 500) {
+				registerInfoMapper.insert(registerInfo);
+			} else {
+				return false;
+			}
 		}
 		return true;
 	}
