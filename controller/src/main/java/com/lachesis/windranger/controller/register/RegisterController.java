@@ -38,6 +38,14 @@ public class RegisterController {
 		return iRegisterService.getRegisterInfo(registerId);
 	}
 
+	@RequestMapping(value = {"/sendInfo"}, method = RequestMethod.GET)
+	@ResponseBody
+	@ApiOperation(value = "根据报名期数和模板号发送通知信息", httpMethod = "GET")
+	public void sendInfo(
+					@ApiParam(required = true,
+									value = "期数") @PathVariable(required = true) String meeting) {
 
+//		iRegisterService.sendInfo(meeting);
+	}
 
 }

@@ -15,4 +15,6 @@ public interface IRegisterService {
 	Map<String, Object> accountLogin(String mobile, String verification);
 
 	void sendVerification(String mobile);
+	
+//	void sendInfo(String meeting);
 }
